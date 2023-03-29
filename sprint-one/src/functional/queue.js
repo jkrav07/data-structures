@@ -5,27 +5,28 @@ var Queue = function() {
   var storage = {};
 
   // Implement the methods below
-  let tailPosition = 0;
-  let headPosition = 0;
+  let tail = 0;
+  let head = 0;
 
   someInstance.enqueue = function(value) {
-    storage[tailPosition] = value;
-    tailPosition++;
+    storage[tail] = value;
+    tail++;
   };
 
   someInstance.dequeue = function() {
-    let firstString = storage[headPosition];
-    delete storage[headPosition];
-    headPosition++;
-    return firstString;
+    if (head < tail) {
+      let firstString = storage[head];
+      delete storage[head];
+      head++;
+      return firstString;
+    } else {
+      return;
+    }
+
   };
 
   someInstance.size = function() {
-    let sizeCounter = 0;
-    for (let prop in storage) {
-      sizeCounter++;
-    }
-    return sizeCounter;
+    return tail - head;
   };
 
   return someInstance;
