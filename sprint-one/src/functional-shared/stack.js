@@ -18,7 +18,6 @@ let extend = function(to, from) {
 var stackMethods = {};
 stackMethods.push = function(value) {
   this.top++;
-  debugger;
   this.storage[this.top] = value;
 };
 

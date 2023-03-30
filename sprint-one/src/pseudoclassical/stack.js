@@ -5,7 +5,6 @@ var Stack = function() {
 
 Stack.prototype.push = function(value) {
   this.top++;
-  debugger;
   this.storage[this.top] = value;
 };
 

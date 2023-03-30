@@ -1,4 +1,5 @@
 var Stack = function() {
+  debugger;
   let someInstance = Object.create(stackMethods);
   someInstance.top = -1;
   someInstance.storage = {};
@@ -9,7 +10,6 @@ var Stack = function() {
 var stackMethods = {};
 stackMethods.push = function(value) {
   this.top++;
-  debugger;
   this.storage[this.top] = value;
 };
 
